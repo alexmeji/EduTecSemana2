@@ -13,18 +13,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(saludar(name: "Alex"))
-        
-        
-        let sayHello = { (name: String) -> String in
-            return "Hola " + name
-        }
-        
-        print(sayHello("Carlos"))
+        print(sayHello(name: "Alex"))
+        print(sumTwoNumbers(one: 5, two: 9))
+        print(minusTreNumers(one: 9, two: 2, three: 1))
+        print(getUserInfoConcat(name: "Alex", age: 24, gender: "Masculino", phone: "30358525"))
     }
     
-    func saludar(name: String) -> String{
-        return "Hola " + name
+    func sayHello(name: String) -> String {
+        return "Hola \(name)"
+    }
+    
+    func sumTwoNumbers(one: Int, two: Int) -> Int {
+        return one + two
+    }
+    
+    func minusTreNumers(one: Int, two: Int, three: Int) -> Int {
+        return one - two - three
+    }
+    
+    func getUserInfoConcat(name: String, age: Int, gender: String, phone: String) -> String {
+        return "Soy \(name) tengo \(age) años de edad soy de sexo \(gender) y mi teléfono es \(phone)"
     }
 
     override func didReceiveMemoryWarning() {
