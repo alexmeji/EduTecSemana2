@@ -10,31 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var buttonTap: UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print(sayHello(name: "Alex"))
-        print(sumTwoNumbers(one: 5, two: 9))
-        print(minusTreNumers(one: 9, two: 2, three: 1))
-        print(getUserInfoConcat(name: "Alex", age: 24, gender: "Masculino", phone: "30358525"))
     }
     
-    func sayHello(name: String) -> String {
-        return "Hola \(name)"
+    @IBAction func sayHelloOne(sender: Any) {
+        let button: UIButton = sender as! UIButton
+        button.setTitle("Soy Casteo", for: UIControlState.normal)
     }
     
-    func sumTwoNumbers(one: Int, two: Int) -> Int {
-        return one + two
+    @IBAction func sayHelloTwo(sender: UIButton) {
+        let button: UIButton = sender
+        button.setTitle("Soy un Boton", for: UIControlState.normal)
     }
     
-    func minusTreNumers(one: Int, two: Int, three: Int) -> Int {
-        return one - two - three
-    }
-    
-    func getUserInfoConcat(name: String, age: Int, gender: String, phone: String) -> String {
-        return "Soy \(name) tengo \(age) años de edad soy de sexo \(gender) y mi teléfono es \(phone)"
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
